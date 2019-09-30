@@ -17,6 +17,11 @@ static NSString* const kChangedKeys = @"changedKeys";
 
 @implementation iCloudStorage
 
++ (BOOL)requiresMainQueueSetup
+{
+  return YES;
+}
+
 + (NSString*)appendPrefixToKey:(NSString*)key {
   return [NSString stringWithFormat:@"%@%@", ICLOUDSTORAGE_PREFIX, key];
 }
